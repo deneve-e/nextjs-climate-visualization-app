@@ -5,6 +5,7 @@ export interface Station {
     longitude: number;
     elevation: number;
     name: string;
+    temperature_records?: TemperatureRecord[]
 }
 
 export interface TemperatureRecord {

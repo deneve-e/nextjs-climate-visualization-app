@@ -1,4 +1,4 @@
-import { Station } from "@/app/types";
+import { Station, TemperatureRecord } from "@/app/types";
 
 const axios = require("axios");
 const BASE_URL = "http://127.0.0.1:5000/api";
@@ -17,3 +17,8 @@ const fetchData = async (path: string) => {
 export const fetchStations = async (): Promise<Station[]> => {
   return fetchData("/stations");
 };
+
+export const fetchTemperatureRecords = async (stationId: string) : Promise<TemperatureRecord[]> => {
+  return fetchData(`/stations/${stationId}`)
+}
+ 
